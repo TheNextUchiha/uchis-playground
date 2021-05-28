@@ -1,0 +1,38 @@
+* {
+    font-family: 'Lato', 'Open Sans', sans-serif;
+}
+
+body{
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #A6D6D6;
+    border-radius: 30px;
+    background-color: #907FA4;
+    color: #FFF;
+}
+
+.heading {
+    text-align: center;
+    color: #EDDED0;
+}
+
+.content {
+    margin: auto 30%;
+    width: 40%;
+    max-width: 1000px;
+    padding: 20px;
+    border: 2px solid #A6D6D6;
+    border-radius: 30px;
+}
+
+.content fieldset {
+    color: #EDDED0;
+}
+
+.content fieldset p,form{
+    padding-left: 30%;
+}
+
+.alert {
+    text-align: center;
+}
