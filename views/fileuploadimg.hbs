@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./../css/experiment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,400&display=swap" rel="stylesheet">
+    <title>Uchi's Playground - File Upload</title>
+</head>
+<body>
+    <h1 class="heading">Uchi's Playground</h1>
+
+    <div class="content">        
+        <fieldset>
+            <legend>Upload a File</legend>
+            <p>Please upload a Picture below:</p>
+            <form action="/file-upload/img" method="POST" enctype="multipart/form-data">
+                <input type="file" name="doc"><br>
+                <button>Upload!</button>
+            </form>
+        </fieldset>
+        &nbsp;
+        {{#if alert}}
+            <p class="alert">File Uploaded!</p>
+        {{/if}}
+    </div>
+</body>
+</html>
