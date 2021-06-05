@@ -6,7 +6,9 @@ const fileUpload = require('./routes/fileupload');
 
 const { mongoose } = require('./server/db/mongoose');   // To initialize Mongoose
 
-const port = process.env.PORT || 3000;
+require('dotenv/config');
+
+const port = process.env.PORT;
 const app = express();
 
 // ---> View Engine <---

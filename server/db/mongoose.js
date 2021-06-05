@@ -1,18 +1,21 @@
 const mongoose = require('mongoose');
 
+require('dotenv/config')
+
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true);
 
-const localURI = 'mongodb://localhost:27017/UchisPlayground';
+const localURI = process.env.MONGO_LOCAL_URI;
 
 try {
-    mongoose.connect(localURI, {      // For Offline
+    mongoose.connect(localURI, {        // For Offline
         useUnifiedTopology: true, 
         useNewUrlParser: true,
         useFindAndModify: false
     });
 
     console.log('DB Online');
+    console.log('Linux -> systemctl start mongo, if an error arises!');
 } catch (err) {
     console.log('Error while connecting to DB :', err);
 }
