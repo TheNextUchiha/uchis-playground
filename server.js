@@ -3,10 +3,13 @@ const hbs = require('hbs');
 
 const index = require('./routes/index');
 const fileUpload = require('./routes/fileupload');
+const paymentGateway = require('./routes/payment');
 
 const { mongoose } = require('./server/db/mongoose');   // To initialize Mongoose
 
-require('dotenv/config');
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv/config');
+}
 
 const port = process.env.PORT;
 const app = express();
@@ -20,9 +23,15 @@ app.use(express.static(__dirname + '/views'));      // To include static HTML pa
 // ---> Routes <---
 app.use(index);
 app.use(fileUpload);
+app.use(paymentGateway);
 
 // ---> Express configs <---
 app.use(express.urlencoded({extended: false}));     // To accept URL Encoded Data
+
+// ---> Handlebars Helpers <---
+hbs.registerHelper('divideThis', function(a, b) {
+    return a/b;
+});
 
 // ---> App Init <---
 app.listen(port, () => {
